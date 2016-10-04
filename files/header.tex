@@ -22,3 +22,12 @@
 \makeatother
 
 \ecvRuleWidth{0.8pt}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd\@ecvitem{#3 }{#3}{}{}
+% Entspricht:
+%\renewcommand\@ecvitem[3][2pt]{%
+%  \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} & #3% <-- Hier das Leerzeichen durch Zeilenende auskommentiert.
+%    \vspace{#1}\tabularnewline}
+\makeatother
