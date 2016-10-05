@@ -1,0 +1,33 @@
+% Lebenslauf - Header
+\documentclass[german,noflag,nologo,booktabs,totpages,helvetica,narrow]{europecv}
+
+\usepackage[a4paper,top=1.5cm,left=1.5cm,right=1.5cm,bottom=2.5cm]{geometry}
+\usepackage[naustrian]{babel}
+\usepackage[T1]{fontenc}
+
+\usepackage{totpages} % Required for totpages
+\usepackage{graphicx} % Required to draw the logo
+
+\usepackage{marvosym} % Kontaktsymbole
+\usepackage{progressbar} % Balken
+
+\usepackage{enumitem}
+
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+
+\makeatletter
+	\newenvironment{cvenumerate}{\begin{minipage}[t]{\ecv@rightcolwidth}\begin{itemize}[leftmargin=*,itemsep=0em,parsep=0em]}{\end{itemize}\end{minipage}}
+
+	\input{files/ecven.def}
+\makeatother
+
+\ecvRuleWidth{0.8pt}
+
+\usepackage{xpatch}
+\makeatletter
+\xpatchcmd\@ecvitem{#3 }{#3}{}{}
+% Entspricht:
+%\renewcommand\@ecvitem[3][2pt]{%
+%  \if@ecvitemstar \ecvbullet\ \fi #2\vspace{#1} & #3% <-- Hier das Leerzeichen durch Zeilenende auskommentiert.
+%    \vspace{#1}\tabularnewline}
+\makeatother
